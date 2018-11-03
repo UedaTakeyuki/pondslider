@@ -1,6 +1,12 @@
 # pondslider
 Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
 
+## What is pondslider for
+The pondslider is for making IoT device side project quickly by reusing a existing module, library or any code for getting Sensor values, and do something with the value like sending to server, saveing to strage, showing to LCE, speaking by speechsynthesis, calling device side lambda and so on.
+
+## How the pondslider work
+The pondslider get sensor values from ```sensor handlers```, and call ```value handlers``` which do somethins with corresponding acquired value.
+
 ## install
 
 ```bash:
@@ -74,6 +80,4 @@ print (sensorhandler.read(config_file_path))
 Any questions, suggestions, reports are welcome! Please make [issue](https://github.com/UedaTakeyuki/sensorhandler/issues) without hesitation! 
 
 ## history
-- 0.1.1  2018.09.28  first version confirmed Raspberry Pi model B2+
-- 0.1.2  2018.09.29  add config_file_path
-- 0.1.3  2018.09.29  add --config, --imppath, --list_imppath
+- 0.1.1  2018.11.03  first version self-forked from [sensorhandler](https://github.com/UedaTakeyuki/sensorhandler)
