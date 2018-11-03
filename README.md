@@ -8,32 +8,34 @@ The pondslider is a python module to read sensor values by Sensor handler, and d
 <img src="pics/ss.2018-11-03.13.56.11.png">
 
 ### What is pondslider for?
-The pondslider is for making IoT device side project quickly by ***reusing existing codes*** to get ***Sensor values***,
-and do somethings with the value like as follows:
+The pondslider is for making IoT device side project quickly by ***reusing existing codes***.
 
-- send to the Server
-- save to the Strage
-- Show on the LCD
-- Speak by speechsynthesis
-- Call device side lambda
-- And so on.
+- Reusing ***Sensor reading*** code.
+- Reusing ***Value handling*** code.
+
 
 ### How the pondslider work?
 First, the pondslider read a configration file to specify:
 
-- What sensors are there.
+- Which sensors shoul be read.
 - Which values are returned by specific sensor.
 - What shoud it do for each value.
 
-Then, pondslider read sensor values from specific ***sensor handlers***, and call ***value handlers*** which is specified for the value.
+Then, pondslider read sensor values through specific ***sensor handlers***, and call ***value handlers*** which is specified for the value.
 
 ### What is Sensor handler?
-The Sensor handler is a python module which shoud have a function read().
-The function read() should return a python dictionaly of ***name*** and value pair as follows:
+The Sensor handler is a python module which wrap existing sensor value reading code to provide unified interface as follows:
+
+- unified read() function
+Sensor handler unifies various function call of sensor value reading on the existing codes as ***read()***
+
+- well-formed return value:
+The ***read()*** function return a python dictionally of ***name*** and ***value*** pairs as follow:
 
 ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
-Typically, a sensor handler is created a
+
+Typically, a sensor handler is created with exising python module for sensor value reading as:
 
 ```python:
 import SomethingExistingSensorModule
@@ -48,7 +50,7 @@ def adjust_the_format(value)
 
 ```
 
-In other case, calling external modules
+In other case, with external executable file,
 
 ```python:
 import subprocess
