@@ -1,8 +1,18 @@
 # pondslider
 Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
 
+<img src="pics/ss.2018-11-03.13.56.11.png">
+
 ## What is pondslider for
-The pondslider is for making IoT device side project quickly by reusing a existing module, library or any code for getting Sensor values, and do something with the value like sending to server, saveing to strage, showing to LCE, speaking by speechsynthesis, calling device side lambda and so on.
+The pondslider is for making IoT device side project quickly by ```reusing existing codes``` to get ```Sensor values```,
+and do something with the value like as follows:
+
+- send to the Server
+- save to the Strage
+- Show on the LCD
+- Speak by speechsynthesis
+- Call device side lambda
+- And so on.
 
 ## How the pondslider work
 The pondslider get sensor values from ```sensor handlers```, and call ```value handlers``` which do somethins with corresponding acquired value.
