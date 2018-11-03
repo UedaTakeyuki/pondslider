@@ -1,13 +1,14 @@
 # pondslider
 Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
 
-<img src="pics/ss.2018-11-03.13.56.11.png">
 
 ## What is pondslider
+The pondslider is a python module to read sensor values by Sensor handler, and do somethins with the value by Value handler.
+<img src="pics/ss.2018-11-03.13.56.11.png">
 
 ### What is pondslider for
 The pondslider is for making IoT device side project quickly by ***reusing existing codes*** to get ***Sensor values***,
-and do something with the value like as follows:
+and do somethings with the value like as follows:
 
 - send to the Server
 - save to the Strage
