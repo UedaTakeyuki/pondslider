@@ -1,11 +1,12 @@
 # pondslider
 Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
 
-<!--img src="pics/ss.2018-11-03.13.56.11.png"-->
-<img src="pics/pondslider.jpg">
+<img src="pics/ss.2018-11-03.13.56.11.png">
 
-## What is pondslider for
-The pondslider is for making IoT device side project quickly by ```reusing existing codes``` to get ```Sensor values```,
+## What is pondslider
+
+### What is pondslider for
+The pondslider is for making IoT device side project quickly by ***reusing existing codes*** to get ***Sensor values***,
 and do something with the value like as follows:
 
 - send to the Server
@@ -15,8 +16,10 @@ and do something with the value like as follows:
 - Call device side lambda
 - And so on.
 
-## How the pondslider work
-The pondslider get sensor values from ```sensor handlers```, and call ```value handlers``` which do somethins with corresponding acquired value.
+### How the pondslider work
+The pondslider get sensor values from ***sensor handlers***, and call ***value handlers*** which do somethins with corresponding acquired value.
+
+
 
 ## install
 
