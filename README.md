@@ -4,9 +4,10 @@ Multipurpose sensorhandler, read the value from source & do somethings (send, sa
 
 ## What is pondslider
 The pondslider is a python module to read sensor values by Sensor handler, and do somethins with the value by Value handler.
+
 <img src="pics/ss.2018-11-03.13.56.11.png">
 
-### What is pondslider for
+### What is pondslider for?
 The pondslider is for making IoT device side project quickly by ***reusing existing codes*** to get ***Sensor values***,
 and do somethings with the value like as follows:
 
@@ -17,8 +18,55 @@ and do somethings with the value like as follows:
 - Call device side lambda
 - And so on.
 
-### How the pondslider work
-The pondslider get sensor values from ***sensor handlers***, and call ***value handlers*** which do somethins with corresponding acquired value.
+### How the pondslider work?
+First, the pondslider read a configration file to specify:
+
+- What sensors are there.
+- Which values are returned by specific sensor.
+- What shoud it do for each value.
+
+Then, pondslider read sensor values from specific ***sensor handlers***, and call ***value handlers*** which is specified for the value.
+
+### What is Sensor handler?
+The Sensor handler is a python module which shoud have a function read().
+The function read() should return a python dictionaly of ***name*** and value pair as follows:
+
+``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
+
+Typically, a sensor handler is created a
+
+```python:
+import SomethingExistingSensorModule
+
+def read():
+  a_sensor = SomethingExistingSensorModule.new()
+  values   = a_sensor.read()
+  return adjust_the_format(values)
+
+def adjust_the_format(value)
+  ''' adjst the format of value as a dictionaly of name & value pair. '''
+
+```
+
+In other case, calling external modules
+
+```python:
+import subprocess
+
+def read():
+  p = subprocess.Popen("./SomethingExistingExecutable2GetSensorValue",
+                       stdout=subprocess.PIPE,
+                       stderr=subprocess.PIPE, 
+                       shell=True)
+  std_out, std_err = p.communicate(None, timeout=20)
+  value = std_out.strip()
+
+def adjust_the_format(value)
+  ''' adjst the format of value as a dictionaly of name & value pair. '''
+
+```
+
+
 
 
 
