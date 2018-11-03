@@ -1,7 +1,8 @@
 # pondslider
 Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
 
-<img src="pics/ss.2018-11-03.13.56.11.png">
+<!--img src="pics/ss.2018-11-03.13.56.11.png"-->
+<img src="pics/pondslider.pdf">
 
 ## What is pondslider for
 The pondslider is for making IoT device side project quickly by ```reusing existing codes``` to get ```Sensor values```,
