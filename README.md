@@ -5,7 +5,7 @@ General sensor handler, read sensor & do somethings (send, save, trigger, ...) w
 ## What is pondslider
 The pondslider is a python module to read sensor values by Sensor handler, and do somethins with the value by Value handler.
 
-<img src="pics/ss.2018-11-03.13.56.11.png">
+<img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-03.13.56.11.png">
 
 ### What is pondslider for?
 The pondslider is for making IoT device side project quickly by ***reusing existing codes***.

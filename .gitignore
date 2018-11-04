@@ -1,4 +1,4 @@
 *.pyc
 dist
 .pypirc
-sensorhandler.egg-info
+pondslider.egg-info
