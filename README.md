@@ -1,5 +1,5 @@
 # pondslider
-Multipurpose sensorhandler, read the value from source & do somethings (send, save, trigger, ...) with it, as configed.
+General sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 
 ## What is pondslider
@@ -35,7 +35,7 @@ The ***read()*** function return a python dictionally of ***name*** and ***value
 ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
 
-Typically, a sensor handler is created with exising python module for sensor value reading as:
+Typically, a sensor handler is created as a wrapper module of exising python module of sensor reading as:
 
 ```python:
 import SomethingExistingSensorModule
@@ -68,8 +68,41 @@ def adjust_the_format(value)
 
 ```
 
+Of cource, It's OK to make Sensor handler as reading sensor value directory.
 
+```python:
+import serial
 
+def read():
+  # mh-z19 CO2 sensor https://github.com/UedaTakeyuki/mh-z19
+  try:
+    ser = serial.Serial(serial_dev,
+                        baudrate=9600,
+                        bytesize=serial.EIGHTBITS,
+                        parity=serial.PARITY_NONE,
+                        stopbits=serial.STOPBITS_ONE,
+                        timeout=1.0)
+    while 1:
+      result=ser.write("\xff\x01\x86\x00\x00\x00\x00\x00\x79")
+      s=ser.read(9)
+      if len(s) >= 4 and s[0] == "\xff" and s[1] == "\x86":
+        return {'co2': ord(s[2])*256 + ord(s[3])}
+      break
+  except:
+     traceback.print_exc()
+
+```
+
+### What is Value handler?
+The Value handler is a python module which recieve sensor value, and do something with it, for example, send to server, write to strage, and so on.
+The purpose of valule handler is to provide a unified interface to handle acquired sensor value with following interface:
+
+```python:
+def handle(sensor_hander, data_name, value):
+```
+
+## example handlers
+example of handlers are available at https://githubcom/UedaTakeyuki/handlers
 
 
 ## install
@@ -123,16 +156,22 @@ Each element of the array of table ***sources*** correspond to one actual data s
 - values: The array of table corresponding to the python dictionally of values which is the returned value of read() mentioned above. The table is consist of ***name*** and ***handlers***. 
   - name: The key of dictionally of values like "humiditydeficit", "temp", "humidity" on the above example.
 
-  - handlers: The array of Python module of Value handler's. The pondslider import these modules dynamically and call function ***handle(source_modlue, name, value)*** for each acquired value. You can 
+  - handlers: The array of Python module of Value handler's. The pondslider import these modules dynamically and call function ***handle(source_modlue, name, value)*** for each acquired value.
 
 ## How to use 
 ### as python program.
 
 ```bash:
-python -m sensorhandler [--config config_file_path] [--imppath python_module_import_path] [ --list_imppath list_of_python_module_import_path]
+usage: python -m sensorhandler [-h] [--config CONFIG] [--imppaths IMPPATHS [IMPPATHS ...]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --config CONFIG       config file for handler specification.
+  --imppaths IMPPATHS [IMPPATHS ...]
+                        list of full path for python modules import path like
+                        as "/home/pi/mh-z19" "/tmp/handler"
 ```
-In case no --config, "config.toml" on the running path is used.
-The path specified by --imppath and --list_imppath is used ad additional Python import library path.
+The path specified by --imppaths is used ad additional Python import library path.
 
 ### as python library.
 

@@ -1,9 +1,0 @@
-README.md
-setup.cfg
-setup.py
-pondslider/__init__.py
-pondslider/__main__.py
-pondslider.egg-info/PKG-INFO
-pondslider.egg-info/SOURCES.txt
-pondslider.egg-info/dependency_links.txt
-pondslider.egg-info/top_level.txt

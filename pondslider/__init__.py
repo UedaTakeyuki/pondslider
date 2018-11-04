@@ -3,15 +3,15 @@
 import sys
 #import inspect
 import traceback
-import subprocess
-import datetime
+#import subprocess
+#import datetime
 import importlib
 #import logging
-import ConfigParser
+#import ConfigParser
 import pytoml as toml
 
 # Const
-reboot = 'sudo reboot'
+#reboot = 'sudo reboot'
 
 def error_report():
   info=sys.exc_info()
@@ -24,36 +24,25 @@ def read(configfilepath):
   with open(configfilepath, 'rb') as fin:
     config = toml.load(fin)
 
-  for data_source in config["sources"]:
-#    print (data_source["name"])
-#    print (data_source)
-
-    # read errorhandler
-    if "errorhandler" in data_source:
-      errorhandler = data_source["errorhandler"]
-#      print ("OK")
-    else:
-      errorhandler = None
-#      print ("NG") 
-
-    # road data_source.
-    reader = importlib.import_module(data_source["name"])
+  for sensor in config["sensors"]:
+    # road sensor_handler.
+    sensor_handler = importlib.import_module(sensor["handler"])
     try:
-      red_values = reader.read()
+      red_values = sensor_handler.read()
       print(red_values)
     except:
       error_report()
       continue
 
     if "values" is not None:
-      values = data_source["values"]
+      values = sensor["values"]
       for value in values:
         print(value["name"])
-        for handler_name in value["handlers"]:
-          print(handler_name)
+        for handler in value["handlers"]:
+          print(handler)
 
           try:
-            handler = importlib.import_module(handler_name)
-            handler.handle(data_source["name"], value["name"], red_values[value["name"]])
+            value_handler = importlib.import_module(handler)
+            value_handler.handle(sensor_handler, value["name"], red_values[value["name"]])
           except:
             error_report()
