@@ -82,21 +82,21 @@ pip install pondslider
 config.toml. The contents are expected as follows:
 
 ```
-[[sources]]
+[[sensors]]
   handler   = "dht22"
-  [[sources.values]]
+  [[sensors.values]]
     name = "temp"
     handlers = [
       "send",
       "save"
     ]
-  [[sources.values]]
+  [[sensors.values]]
     name = "humidity"
     handlers = [
       "send",
       "save"
     ]
-  [[sources.values]]
+  [[sensors.values]]
     name = "humiditydeficit"
     handlers = [
       "send",
@@ -104,9 +104,9 @@ config.toml. The contents are expected as follows:
     ]
 
 
-[[sources]]
+[[sensors]]
   handler   = "mh-z19"
-  [[sources.values]]
+  [[sensors.values]]
     name = "co2"
     handlers = [
       "send",
