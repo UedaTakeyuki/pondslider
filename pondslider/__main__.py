@@ -1,6 +1,8 @@
 import os
 import sys
 import argparse
+import time
+import datetime
 import __init__ as pondslider
 
 parser = argparse.ArgumentParser()
@@ -12,6 +14,9 @@ parser.add_argument("--config",
 parser.add_argument("--imppaths",
 										type=str, nargs='+',
                     help='list of full path for python modules import path like as "/home/pi/mh-z19" "/tmp/handler" .')
+parser.add_argument("--interval",
+                    type=int,
+                    help='minute of interval to repeat. no repeat in case not set." .')
 args = parser.parse_args()
 
 usage = 'Usage: python {} [config_file_path]'.format(__file__)
@@ -29,10 +34,8 @@ else:
 if args.imppath:
 	sys.path.append(args.imppath)
 '''
-print(args.imppaths)
 if args.imppaths:
   for imppath in args.imppaths:
-    print(imppath)
     sys.path.append(imppath)
 
 '''
@@ -42,4 +45,13 @@ else:
   configfilepath = os.getcwd()+'/config.toml'
 '''
 
-pondslider.read(args.config)
+if args.interval:
+  while True:
+    now = datetime.datetime.now()
+    pondslider.read(args.config)
+    now_after=datetime.datetime.now()
+    elapsed=(now_after - now).seconds +  float((now_after - now).microseconds)/1000000
+    if (elapsed < args.interval * 60):
+        time.sleep(args.interval * 60 - elapsed)
+else:
+  pondslider.read(args.config)

@@ -1,5 +1,5 @@
 # pondslider
-General sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
+General purpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 
 ## What is pondslider
@@ -10,8 +10,8 @@ The pondslider is a python module to read sensor values by Sensor handler, and d
 ### What is pondslider for?
 The pondslider is for making IoT device side project quickly by ***reusing existing codes***.
 
-- Reusing ***Sensor reading*** code.
-- Reusing ***Value handling*** code.
+- Reusing existing ***Sensor reading*** code through ***unified interface*** provided by ***Sensor handler*** mention later.
+- Reusing existing ***Value handling*** code through ***unified interface*** provided by ***Value handler*** mention later.
 
 
 ### How the pondslider work?
@@ -21,7 +21,7 @@ First, the pondslider read a configration file to specify:
 - Which values are returned by specific sensor.
 - What shoud it do for each value.
 
-Then, pondslider read sensor values through specific ***sensor handlers***, and call ***value handlers*** which is specified for the value.
+Then, pondslider get sensor values through specific ***sensor handlers***, and call ***value handlers*** which is related.
 
 ### What is Sensor handler?
 The Sensor handler is a python module which wrap existing sensor value reading code to provide unified interface as follows:
@@ -102,7 +102,7 @@ def handle(sensor_hander, data_name, value):
 ```
 
 ## example handlers
-example of handlers are available at https://githubcom/UedaTakeyuki/handlers
+example of handlers are available at https://github.com/UedaTakeyuki/handlers
 
 
 ## install
@@ -162,7 +162,7 @@ Each element of the array of table ***sources*** correspond to one actual data s
 ### as python program.
 
 ```bash:
-usage: python -m sensorhandler [-h] [--config CONFIG] [--imppaths IMPPATHS [IMPPATHS ...]]
+usage: python -m pondslider [-h] [--config CONFIG] [--imppaths IMPPATHS [IMPPATHS ...]] [--interval INTERVAL]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -170,18 +170,24 @@ optional arguments:
   --imppaths IMPPATHS [IMPPATHS ...]
                         list of full path for python modules import path like
                         as "/home/pi/mh-z19" "/tmp/handler"
+  --interval INTERVAL   minute of interval to repeat. no repeat in case not
+                        set." .
 ```
 The path specified by --imppaths is used ad additional Python import library path.
+With --interval option, pondslider repeat it in specified interval minutes. Without --interval, just run one time and quit.
+
 
 ### as python library.
 
 ```python:
-import sensorhandler
+import pondslider
 
-print (sensorhandler.read(config_file_path))
+print (pondslider.read(config_file_path))
 ```
 ## Q&A
-Any questions, suggestions, reports are welcome! Please make [issue](https://github.com/UedaTakeyuki/sensorhandler/issues) without hesitation! 
+Any questions, suggestions, reports are welcome! Please make [issue](https://github.com/UedaTakeyuki/pondslider/issues) without hesitation! 
 
 ## history
-- 0.1.1  2018.11.03  first version self-forked from [sensorhandler](https://github.com/UedaTakeyuki/sensorhandler)
+- 0.1.1  2018.11.03  first version self-forked from [sensorhandler](https://github.com/UedaTakeyuki/sensorhandler).
+- 0.2.1  2018.11.06  add --interval option.
+- 0.2.2  2018.11.06  minor fix: remove redundant print
