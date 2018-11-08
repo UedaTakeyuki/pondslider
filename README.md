@@ -1,5 +1,5 @@
 # pondslider
-Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
+General purpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 
 ## What is pondslider
@@ -27,14 +27,12 @@ Then, pondslider get sensor values through specific ***sensor handlers***, and c
 The Sensor handler is a python module which wrap existing sensor reading code having various interface, to provide unified interface as follows:
 
 - unified read() function:
-
   Sensor handler unifies various function call of sensor value reading on the existing codes as ***read()***
 
 - well-formed return value:
-
   The ***read()*** function return a python dictionally of ***name*** and ***value*** pairs as follow:
 
-  ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
+``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
 <img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
 
@@ -254,6 +252,7 @@ optional arguments:
   --value_handlers VALUE_HANDLERS [VALUE_HANDLERS ...]
                         list of value handler modules as "sender.monitor.send
                         saver.strage.save" .
+p
 ```
 The path specified by --imppaths is used ad additional Python import library path.
 With --interval option, pondslider repeat it in specified interval minutes. Without --interval, just run one time and quit.
@@ -273,4 +272,4 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 - 0.1.1  2018.11.03  first version self-forked from [sensorhandler](https://github.com/UedaTakeyuki/sensorhandler).
 - 0.2.1  2018.11.06  add --interval option.
 - 0.2.2  2018.11.06  minor fix: remove redundant print
-- 0.2.3  2018.11.08  add --sensor_handlers and --value_handlers
+- 0.3.1  2018.11.07  add --sensor_handlers and --value_handlers
