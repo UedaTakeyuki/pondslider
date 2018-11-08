@@ -36,7 +36,7 @@ The Sensor handler is a python module which wrap existing sensor reading code ha
 
   ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
-<img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-08.10.51.16.png">
+<img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
 
 Typically, a sensor handler is created as a wrapper module of exising python module with ***import*** and call there function to read sensor value as follow:
 
@@ -121,7 +121,7 @@ The purpose of valule handler is to provide a unified interface to handle acquir
 ```python:
 def handle(sensor_hander, data_name, value):
 ```
-<img src="https://github.com/UedaTakeyuki/pondslider/blob/master/pics/ss.2018-11-08.10.51.16.png?raw=true">
+<img src="https://github.com/UedaTakeyuki/pondslider/blob/master/pics/ss.2018-11-08.10.57.59.png?raw=true">
 
 ## example handlers
 example of handlers are available at https://github.com/UedaTakeyuki/handlers
@@ -273,4 +273,4 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 - 0.1.1  2018.11.03  first version self-forked from [sensorhandler](https://github.com/UedaTakeyuki/sensorhandler).
 - 0.2.1  2018.11.06  add --interval option.
 - 0.2.2  2018.11.06  minor fix: remove redundant print
-- 0.2.3  2018.11.07  add --sensor_handlers and --value_handlers
+- 0.2.3  2018.11.08  add --sensor_handlers and --value_handlers
