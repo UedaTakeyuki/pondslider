@@ -34,7 +34,7 @@ The Sensor handler is a python module which wrap existing sensor reading code ha
 
   The ***read()*** function return a python dictionally of ***name*** and ***value*** pairs as follow:
 
-``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
+  ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
 <img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
 
