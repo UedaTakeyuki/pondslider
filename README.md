@@ -26,11 +26,11 @@ Then, pondslider get sensor values through specific ***sensor handlers***, and c
 ### What is Sensor handler?
 The Sensor handler is a python module which wrap existing sensor reading code having various interface, to provide unified interface as follows:
 
-- unified read() function
-Sensor handler unifies various function call of sensor value reading on the existing codes as ***read()***
+- unified read() function:
+  Sensor handler unifies various function call of sensor value reading on the existing codes as ***read()***
 
 - well-formed return value:
-The ***read()*** function return a python dictionally of ***name*** and ***value*** pairs as follow:
+  The ***read()*** function return a python dictionally of ***name*** and ***value*** pairs as follow:
 
 ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
