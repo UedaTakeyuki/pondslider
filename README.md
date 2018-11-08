@@ -1,5 +1,5 @@
 # pondslider
-General purpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
+Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 
 ## What is pondslider
