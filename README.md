@@ -121,7 +121,7 @@ The purpose of valule handler is to provide a unified interface to handle acquir
 ```python:
 def handle(sensor_hander, data_name, value):
 ```
-<img src="https://github.com/UedaTakeyuki/pondslider/blob/master/pics/ss.2018-11-08.10.45.35.png?raw=true">
+<img src="https://github.com/UedaTakeyuki/pondslider/blob/master/pics/ss.2018-11-08.10.51.16.png?raw=true">
 
 ## example handlers
 example of handlers are available at https://github.com/UedaTakeyuki/handlers
