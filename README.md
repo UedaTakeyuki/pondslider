@@ -1,5 +1,5 @@
 # pondslider
-General purpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
+Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 
 ## What is pondslider
@@ -36,7 +36,7 @@ The Sensor handler is a python module which wrap existing sensor reading code ha
 
   ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
-<img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
+<img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-08.10.51.16.png">
 
 Typically, a sensor handler is created as a wrapper module of exising python module with ***import*** and call there function to read sensor value as follow:
 
