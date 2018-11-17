@@ -1,11 +1,11 @@
-# pondslider
-
-Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
-
-## Downloads
+<div>
 [![Downloads](https://pepy.tech/badge/pondslider)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/month)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/week)](https://pepy.tech/project/pondslider)
+<div>
+# pondslider
+
+Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
 ## What is pondslider
 The pondslider is a python module to read sensor values by Sensor handler, and do somethins with the value by Value handler.
