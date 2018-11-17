@@ -2,6 +2,7 @@
 
 Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.
 
+## Downloads
 [![Downloads](https://pepy.tech/badge/pondslider)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/month)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/week)](https://pepy.tech/project/pondslider)
