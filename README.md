@@ -1,10 +1,10 @@
-<div style="text-align: right;">
+<span style="text-align: right;">
 
 [![Downloads](https://pepy.tech/badge/pondslider)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/month)](https://pepy.tech/project/pondslider)
 [![Downloads](https://pepy.tech/badge/pondslider/week)](https://pepy.tech/project/pondslider)
 
-</div>
+</span>
 
 # pondslider
 
