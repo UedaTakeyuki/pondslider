@@ -131,6 +131,11 @@ example of handlers are available at https://github.com/UedaTakeyuki/handlers
 pip install pondslider
 ```
 
+## installs
+[![Downloads](https://pepy.tech/badge/pondslider)](https://pepy.tech/project/pondslider)
+[![Downloads](https://pepy.tech/badge/pondslider/month)](https://pepy.tech/project/pondslider)
+[![Downloads](https://pepy.tech/badge/pondslider/week)](https://pepy.tech/project/pondslider)
+
 ## How to set Sensor and Value handlers
 
 There are 2 way to set handers. One is to use command-line option, the other is [TOML](https://github.com/toml-lang/toml) formatted config file.
@@ -273,3 +278,4 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 - 0.2.1  2018.11.06  add --interval option.
 - 0.2.2  2018.11.06  minor fix: remove redundant print
 - 0.3.1  2018.11.07  add --sensor_handlers and --value_handlers
+- 0.3.7  2018.11.19  fix missing requires

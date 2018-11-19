@@ -7,7 +7,7 @@ with open("README.md") as f:
 setup(
   name = 'pondslider',
   packages = ['pondslider'], # this must be the same as the name above
-  version = '0.3.1',
+  version = '0.3.7',
   description = 'Multipurpose sensor handler, read sensor & do somethings (send, save, trigger, ...) with the value.',
   long_description=long_description,
   long_description_content_type="text/markdown",
@@ -20,4 +20,7 @@ setup(
                  'Programming Language :: Python',
                  'Topic :: Terminals'
   ],
+  install_requires=[
+    "pytoml"
+  ]
 )
