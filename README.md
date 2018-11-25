@@ -141,6 +141,8 @@ pip install pondslider
 There are 2 way to set handers. One is to use command-line option, the other is [TOML](https://github.com/toml-lang/toml) formatted config file.
 In case both config and command-line option is set, the pondslider handle also both in the order config file first, then command-line.
 
+For the way to specify a various handlers in the various package & directory, please refer [How to specify a handler package in the various package & directory hierarchies.](https://github.com/UedaTakeyuki/pondslider/wiki/How-to-specify-a-handler-package-in-the-various-package-&-directory-hierarchies.).
+
 ### Set Sensor and Value handlers by command-line option
 The Sensor handlers can be set by command-line option ***--sensor_handlers***.
 This is list type command-line option, you can specify nesessary sensor handlers module like mh-z19 and dht22 as follows:
