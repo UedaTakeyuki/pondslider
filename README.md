@@ -35,7 +35,7 @@ The Sensor handler is a python module which wrap existing sensor reading code ha
 
 <img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
 
-There are huge open source code base to read sensor value on the github, pypi and other repository. In my experience, it's verry rare case to need sensor reading code by myself, insted I can find reusable code of most sensors easily. But also there are wide variety of the interface of these code and form of result, so I just need to make wrapper code to adapt interface.
+There are huge open source code base on the github, pypi and other repository. In my experience, it' very rare to face a situation of the necessity of writing a code to readi a sensor value myself, insted I can find reusable code of most sensors easily. But also there are wide variety of the interface of these code and form of result, so I just need to make wrapper code to adapt interface.
 The Sensor handler is just these code to provide unified interface for variable pre-existing sensor reading code.
 
 Typically, a sensor handler is created as a wrapper module of exising python module with ***import*** and call there function to read sensor value as follow:
