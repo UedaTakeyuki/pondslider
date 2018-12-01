@@ -8,8 +8,7 @@ The pondslider is a python module to read sensor values by Sensor handler, and d
 <img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-03.13.56.11.png">
 
 ### What is pondslider for?
-The pondslider is for making IoT device side project quickly by ***reusing existing codes***.
-
+The pondslider is for making sensor application quickly by ***reusing existing codes***. 
 - Reusing existing ***Sensor reading*** code through ***unified interface*** provided by ***Sensor handler*** mention later.
 - Reusing existing ***Value handling*** code through ***unified interface*** provided by ***Value handler*** mention later.
 
@@ -35,6 +34,9 @@ The Sensor handler is a python module which wrap existing sensor reading code ha
 ``` {'humiditydeficit': 15.9, 'temp': 26.8, 'humidity': 37.6}```
 
 <img src="https://raw.githubusercontent.com/UedaTakeyuki/pondslider/master/pics/ss.2018-11-07.15.21.07.png">
+
+There are a log of code to read sensor value on the github, pypi and other repository. In my experience, it's verry rare case to need sensor reading code by myself, insted I can find reusable code of most sensors. But the the interface of these code and form of result have a wide variety, so just my necessary is making wrapper code to unify interface.
+The Sensor handler is just these code to provide unified interface for variable pre-existing sensor reading code.
 
 Typically, a sensor handler is created as a wrapper module of exising python module with ***import*** and call there function to read sensor value as follow:
 
