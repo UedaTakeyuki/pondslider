@@ -261,7 +261,6 @@ optional arguments:
   --value_handlers VALUE_HANDLERS [VALUE_HANDLERS ...]
                         list of value handler modules as "sender.monitor.send
                         saver.strage.save" .
-p
 ```
 The path specified by --imppaths is used ad additional Python import library path.
 With --interval option, pondslider repeat it in specified interval minutes. Without --interval, just run one time and quit.
