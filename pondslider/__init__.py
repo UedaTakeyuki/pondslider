@@ -33,7 +33,7 @@ def read(configfilepath):
         error_report()
         continue
 
-      if "values" is not None:
+      if sensor["values"] is not None:
         values = sensor["values"]
         for value in values:
           print(value["name"])

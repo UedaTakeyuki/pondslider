@@ -3,7 +3,7 @@ import sys
 import argparse
 import time
 import datetime
-import __init__ as pondslider
+import pondslider.__init__ as pondslider
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--config",
