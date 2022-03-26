@@ -9,8 +9,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--config",
                     default=os.getcwd()+'/config.toml',
                     help="config file for handler specification.")
-#parser.add_argument("--imppath",
-#                    help="full path for python modules import path.")
+parser.add_argument("--version",
+                    action='store_true',
+                    help="show version.")
 parser.add_argument("--imppaths",
 										type=str, nargs='+',
                     help='list of full path for python modules import path like as "/home/pi/mh-z19 /tmp/handler" .')
@@ -27,6 +28,10 @@ parser.add_argument("--value_handlers",
 args = parser.parse_args()
 
 usage = 'Usage: python {} [config_file_path]'.format(__file__)
+
+# version
+if args.version:
+  print ("version: ",pondslider.version)
 
 # config file
 '''

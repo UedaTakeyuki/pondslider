@@ -292,3 +292,4 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 - 0.3.1  2018.11.07  add --sensor_handlers and --value_handlers
 - 0.3.7  2018.11.19  fix missing requires
 - 0.4.8  2022.03.23  Bullseye support: fix [issue #1](https://github.com/UedaTakeyuki/pondslider/issues/1) occured with Bullseye.
+- 0.5.1  2022.03.26  add --version

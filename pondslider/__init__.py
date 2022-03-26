@@ -14,6 +14,8 @@ import pytoml as toml
 # Const
 #reboot = 'sudo reboot'
 
+version = "0.5.1"
+
 def error_report():
   info=sys.exc_info()
   print (traceback.format_exc(info[0]))
